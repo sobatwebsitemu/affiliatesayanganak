@@ -164,7 +164,6 @@
             overflow: hidden;
         }
         
-        /* Dekorasi Cahaya Latar Belakang */
         .social-section::before {
             content: ''; position: absolute; top: 30%; left: 30%;
             width: 300px; height: 300px; background: rgba(42, 171, 238, 0.15);
@@ -188,19 +187,16 @@
             position: relative;
         }
         
-        /* Wadah Kaca */
         .social-icon {
             width: 80px; height: 80px; border-radius: 25px; 
             display: flex; justify-content: center; align-items: center;
             margin-bottom: 1.5rem; position: relative;
-            
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-top: 1px solid rgba(255, 255, 255, 0.3);
             border-left: 1px solid rgba(255, 255, 255, 0.2);
-            
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             animation: floating 4s ease-in-out infinite;
@@ -234,8 +230,6 @@
             opacity: 0.7;
         }
         
-        /* --- ANIMASI HOVER --- */
-        
         .social-icon-wrapper:hover .social-icon {
             animation-play-state: paused;
             transform: translateY(-10px) scale(1.05) rotate(5deg);
@@ -255,7 +249,6 @@
             border-color: rgba(255, 0, 0, 0.5);
         }
         
-        /* Warna SVG Asli muncul saat hover */
         .social-icon-wrapper:hover .telegram-icon svg.icon-svg { fill: var(--telegram-color); transform: scale(1.1); }
         .social-icon-wrapper:hover .instagram-icon svg.icon-svg { fill: #E1306C; transform: scale(1.1); }
         .social-icon-wrapper:hover .youtube-icon svg.icon-svg { fill: var(--youtube-color); transform: scale(1.1); }
@@ -277,6 +270,77 @@
             0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(255, 59, 48, 0); }
             100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+        }
+
+        /* --- Sesi Profil Tim --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        .team-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(197, 160, 89, 0.4);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 20px rgba(197, 160, 89, 0.1);
+        }
+        .team-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--gold-primary);
+            padding: 4px;
+            background: var(--bg-dark);
+        }
+        .team-name {
+            font-size: 1.5rem;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+        }
+        .team-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .team-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .btn-mini-social {
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-white);
+            background: rgba(255,255,255,0.03);
+        }
+        .btn-mini-social.tiktok:hover {
+            background: #000;
+            border-color: #25F4EE;
+            color: #25F4EE;
+            box-shadow: 0 0 15px rgba(37, 244, 238, 0.2);
+        }
+        .btn-mini-social.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(225, 48, 108, 0.4);
         }
 
         /* --- Footer --- */
@@ -316,6 +380,7 @@
             <li><a href="#beranda">Beranda</a></li>
             <li><a href="#koleksi">Rekomendasi</a></li>
             <li><a href="#koneksi">Temukan Kami</a></li>
+            <li><a href="#profil-tim">Profil Tim</a></li>
         </ul>
     </nav>
 
@@ -337,20 +402,18 @@
         </div>
 
         <div class="products-grid">
-            <!-- Kartu Produk 1 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-82250-mkdx1ckcaryedb.webp" alt="Balok Susun Premium" class="product-image">
                 </div>
                 <div class="product-info">
-                    <span class="category-tag">perlengkapan olahraga dan rekreasi</span>
+                    <span class="category-tag">Perlengkapan olahraga dan rekreasi</span>
                     <h3 class="product-name">Kacamata Renang Anak Kiara dan Kian OL</h3>
                     <p class="product-desc">Kacamata Renang Kiara dan Kian OL Dengan Fitur Anti Fog Protection Yang Membuat Penglihatan Anda Di Dalam Kolam Renang Tetap Jelas. Dengan Material Yang Lembut Membuat Anda Tetap Nyaman Menggunakan Kacamata Renang Ini. Dan Juga Design Yang Lucu Membuat Anak Menjadi Happy.</p>
                     <a href="https://s.shopee.co.id/W3he7uHuz" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
             
-            <!-- Kartu Produk 2 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98s-ly617bnnu0ny13.webp" alt="Sepeda Anak Roda Tiga" class="product-image">
@@ -363,7 +426,6 @@
                 </div>
             </div>
 
-            <!-- Kartu Produk 3 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m441dggfe7bt3e.webp" alt="Tablet Belajar Anak" class="product-image">
@@ -376,7 +438,6 @@
                 </div>
             </div>
 
-            <!-- Kartu Produk 4 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk0-m67oj01jov287e.webp" alt="Boneka Beruang Interaktif" class="product-image">
@@ -389,7 +450,6 @@
                 </div>
             </div>
 
-            <!-- Kartu Produk 5 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk7-m7a7wupg8i079e.webp" alt="Set Alat Lukis Lengkap" class="product-image">
@@ -402,7 +462,6 @@
                 </div>
             </div>
 
-            <!-- Kartu Produk 6 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/e13b180aa721f6829172f240946d34ee.webp" alt="Tenda Bermain Kastil" class="product-image">
@@ -415,7 +474,6 @@
                 </div>
             </div>
 
-            <!-- Kartu Produk 7 (Baru) -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk0-maxkuv63i2p047.webp" alt="Magnetic Tiles Building Blocks" class="product-image">
@@ -428,7 +486,6 @@
                 </div>
             </div>
 
-            <!-- Kartu Produk 8 (Baru) -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/b5373ca1c5c5c7d9f053f655ab75d418.webp" alt="Montessori Busy Board" class="product-image">
@@ -441,7 +498,6 @@
                 </div>
             </div>
 
-            <!-- Kartu Produk 9 (Baru) -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-82251-mgyht7y5bs3t18.webp" alt="Kamera Digital Anak" class="product-image">
@@ -454,7 +510,6 @@
                 </div>
             </div>
             
-            <!-- Kartu Produk 10 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98u-lz7bl79t1u6g08.webp" alt="Pasir Ajaib" class="product-image">
@@ -462,16 +517,11 @@
                 <div class="product-info">
                     <span class="category-tag">Kebutuhan Belajar Anak</span>
                     <h3 class="product-name">SAMPUL BUKU STIKER PVC FILM PELINDUNG BUKU</h3>
-                    <p class="product-desc">Terbuat dari bahan PP berkualitas tinggi, tahan lama tahan air dan tidak licin. Desain transparan, mudah untuk menemukan buku
-
-Film bening berperekat, mudah digunakan, untuk melindungi peta, buku, dokumen, dll. Mencegah kotoran dan kerusakan.
-
-Cocok untuk poster, peta, presentasi dan berbagai permukaan lainnya.</p>
+                    <p class="product-desc">Terbuat dari bahan PP berkualitas tinggi, tahan lama tahan air dan tidak licin. Desain transparan, mudah untuk menemukan buku Film bening berperekat, mudah digunakan, untuk melindungi peta, buku, dokumen, dll. Mencegah kotoran dan kerusakan. Cocok untuk poster, peta, presentasi dan berbagai permukaan lainnya.</p>
                     <a href="https://s.shopee.co.id/9pbXvyKa2y" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
-            <!-- Kartu Produk 11 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98s-lyn4gep9rbig91.webp" alt="Puzzle Kayu 3D" class="product-image">
@@ -484,7 +534,6 @@ Cocok untuk poster, peta, presentasi dan berbagai permukaan lainnya.</p>
                 </div>
             </div>
 
-            <!-- Kartu Produk 12 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134201-7rasf-m58jqmrtc4g231.webp" alt="Alphabet Puzzle" class="product-image">
@@ -497,7 +546,6 @@ Cocok untuk poster, peta, presentasi dan berbagai permukaan lainnya.</p>
                 </div>
             </div>
 
-            <!-- Kartu Produk 13 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mc6o40brffm3df.webp" alt="Sleepsuit Bayi" class="product-image">
@@ -505,16 +553,11 @@ Cocok untuk poster, peta, presentasi dan berbagai permukaan lainnya.</p>
                 <div class="product-info">
                     <span class="category-tag">Kebutuhan Belajar Anak</span>
                     <h3 class="product-name">Meja Belajar Lipat Anak Whiteboard</h3>
-                    <p class="product-desc">Meja Belajar Lipat Multifungsi yang dilengkapi Papan Whiteboard ini sangat cocok sekali untuk putra putri anda usia Balita hingga Sekolah Dasar (SD).
-
-
-
-Dapat Meningkatkan Minat dan Semangat Anak dalam Belajar.</p>
+                    <p class="product-desc">Meja Belajar Lipat Multifungsi yang dilengkapi Papan Whiteboard ini sangat cocok sekali untuk putra putri anda usia Balita hingga Sekolah Dasar (SD). Dapat Meningkatkan Minat dan Semangat Anak dalam Belajar.</p>
                     <a href="https://s.shopee.co.id/30lDr6JXJ0" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
-            <!-- Kartu Produk 14 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/sg-11134201-825ae-mg7cnnkdunm481.webp" alt="Krim Wajah Bayi" class="product-image">
@@ -522,16 +565,11 @@ Dapat Meningkatkan Minat dan Semangat Anak dalam Belajar.</p>
                 <div class="product-info">
                     <span class="category-tag">Pendukung Kreatifitas Bakat Anak</span>
                     <h3 class="product-name">Premium Coloring Roll Gulungan Mewarnai 3M</h3>
-                    <p class="product-desc">4 topik utama, pola tidak berulang
-
-Menangkap Periode Sensitif Graffiti Anak, Menginspirasi Kreativitas Pertumbuhan
-
-Setiap kuas bisa melukis dan bermain.</p>
+                    <p class="product-desc">4 topik utama, pola tidak berulang Menangkap Periode Sensitif Graffiti Anak, Menginspirasi Kreativitas Pertumbuhan Setiap kuas bisa melukis dan bermain.</p>
                     <a href="https://s.shopee.co.id/W3sszCbW1" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
-            <!-- Kartu Produk 15 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98z-lnthj92z7laf08.webp" alt="Hampers Bayi" class="product-image">
@@ -539,32 +577,11 @@ Setiap kuas bisa melukis dan bermain.</p>
                 <div class="product-info">
                     <span class="category-tag">Pendukung Kreatifitas Bakat Anak</span>
                     <h3 class="product-name">VOOVA Plastic Crayon Krayon Untuk Gambar</h3>
-                    <p class="product-desc">Crayon mewarnai dengan kualitas tinggi! 
-
-pastikan crayon anak 
-
- 
-
-kesayangan Anda menggunakan crayonlab keunggulan crayonlab 
-
-- crayon tidak mengotori tangan anak saat digunakan
-
-- non toxic/ tidak beracun 
-
-- tekstur crayon lunak dan lembut 
-
-- permukaan crayon halus 
-
--hasil warna halus
-
-- tidak mengotori baju jika crayon bersentuhan dengan baju
-
--mudah digunakan.</p>
+                    <p class="product-desc">Crayon mewarnai dengan kualitas tinggi! pastikan crayon anak kesayangan Anda menggunakan crayonlab keunggulan crayonlab - crayon tidak mengotori tangan anak saat digunakan - non toxic/ tidak beracun - tekstur crayon lunak dan lembut - permukaan crayon halus -hasil warna halus - tidak mengotori baju jika crayon bersentuhan dengan baju -mudah digunakan.</p>
                     <a href="https://s.shopee.co.id/LkSidd5Tl" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
-            <!-- Kartu Produk 16 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m441dggfe7bt3e.webp" alt="Topi Bayi" class="product-image">
@@ -577,7 +594,6 @@ kesayangan Anda menggunakan crayonlab keunggulan crayonlab
                 </div>
             </div>
 
-            <!-- Kartu Produk 17 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/sg-11134201-7reqg-m91p4gak02hd60.webp" alt="Matras Playmat" class="product-image">
@@ -585,16 +601,11 @@ kesayangan Anda menggunakan crayonlab keunggulan crayonlab
                 <div class="product-info">
                     <span class="category-tag">Perlengkapan Bayi</span>
                     <h3 class="product-name">Promo Tisu Mini Travel Size Karakter Lucu Tebal</h3>
-                    <p class="product-desc">Tisu Basah Mini Travel Size ini adalah solusi praktis untuk menjaga kebersihan di mana saja dan kapan saja!
-
-
-
-Dengan motif lucu pada kemasan, produk ini tidak hanya fungsional tetapi juga estetik.</p>
+                    <p class="product-desc">Tisu Basah Mini Travel Size ini adalah solusi praktis untuk menjaga kebersihan di mana saja dan kapan saja! Dengan motif lucu pada kemasan, produk ini tidak hanya fungsional tetapi juga estetik.</p>
                     <a href="https://s.shopee.co.id/1LczvSF6lZ" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
 
-            <!-- Kartu Produk 18 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-7rash-m5aax5p7pdaaa3.webp" alt="Macrame Kit" class="product-image">
@@ -607,7 +618,6 @@ Dengan motif lucu pada kemasan, produk ini tidak hanya fungsional tetapi juga es
                 </div>
             </div>
 
-                        <!-- Kartu Produk 19 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-822wm-mny2clbk1hqdd9.webp" alt="Macrame Kit" class="product-image">
@@ -620,7 +630,6 @@ Dengan motif lucu pada kemasan, produk ini tidak hanya fungsional tetapi juga es
                 </div>
             </div>
 
-                                    <!-- Kartu Produk 20 -->
             <div class="product-card">
                 <div class="product-img-container">
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-822wq-mmindwe8nj0oee.webp" alt="Macrame Kit" class="product-image">
@@ -632,7 +641,6 @@ Dengan motif lucu pada kemasan, produk ini tidak hanya fungsional tetapi juga es
                     <a href="https://s.shopee.co.id/4qDEHyBhjf" class="btn-affiliate">CEK Harga Spesial</a>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -664,6 +672,46 @@ Dengan motif lucu pada kemasan, produk ini tidak hanya fungsional tetapi juga es
                 </div>
                 <span class="social-label">YouTube</span>
             </a>
+        </div>
+    </section>
+
+    <section id="profil-tim" class="section-container" style="margin-top: 4rem;">
+        <div class="section-header">
+            <h2>Tim Kami</h2>
+            <p>Kenali orang-orang luar biasa di balik layar Sobat Affiliate Kids.</p>
+            <div class="divider"></div>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="fotoprofilsuci.png" alt="Suci" class="team-img">
+                <h3 class="team-name">Suci</h3>
+                <p class="team-desc">Halo saya Suci dan ini media sosial saya.</p>
+                <div class="team-social-links">
+                    <a href="https://www.tiktok.com/@stefihaqi" class="btn-mini-social tiktok">TikTok</a>
+                    <a href="https://www.instagram.com/sucitesa" class="btn-mini-social instagram">Instagram</a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="fotoprofilpia.png" alt="Silvi" class="team-img">
+                <h3 class="team-name">Silvia</h3>
+                <p class="team-desc">Halo saya Silvi dan ini media sosial saya.</p>
+                <div class="team-social-links">
+                    <a href="https://www.tiktok.com/@pipiwww____" class="btn-mini-social tiktok">TikTok</a>
+                    <a href="https://www.instagram.com/slvia00" class="btn-mini-social instagram">Instagram</a>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="fotoprofilalvin.png" alt="Alvin" class="team-img">
+                <h3 class="team-name">Alvin</h3>
+                <p class="team-desc">Halo saya Alvin dan ini media sosial saya.</p>
+                <div class="team-social-links">
+                    <a href="https://www.tiktok.com/@eizitpie" class="btn-mini-social tiktok">TikTok</a>
+                    <a href="https://www.instagram.com/alvinzulian_" class="btn-mini-social instagram">Instagram</a>
+                </div>
+            </div>
         </div>
     </section>
 
